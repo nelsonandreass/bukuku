@@ -8,11 +8,13 @@
     <span>Stock</span>
   </div>
 
-  <div>
-    <div class="col-sm-6 col-md-3" style="margin-left:-15px;"><a href="{{url('/user/tambahitem')}}" class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-edit"></i> Tambah Item</a></div>
+  <div class="row">
+    <div class="col-sm-6 col-md-3 mb-3" style="margin-left:-15px;"><a href="{{url('/user/tambahitem')}}" class="btn btn-az-primary btn-with-icon btn-block"><i class="typcn typcn-edit"></i> Input Stock</a></div>
+    <div class="col-sm-6 col-md-3 mb-3" style="margin-left:-15px;"><a href="{{url('/user/tambahitembaru')}}" class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-edit"></i> Tambah Item Baru</a></div>
   </div>
 
   <div class="table-responsive mt-3">
+  
     <table class="table table-striped mg-b-0">
       <thead>
         <tr>

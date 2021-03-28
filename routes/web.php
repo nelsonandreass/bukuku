@@ -37,6 +37,13 @@ Route::group(['prefix' => 'user' , 'middleware' => ['auth']], function(){
     Route::post('/tutupbuku' , 'UserController@tutupbuku');
     Route::get('/reportprofit' ,'UserController@reportprofit');
     Route::post('/reportprofit/filter' ,'UserController@reportprofitfilter');
+    Route::get('/reportincome' ,'UserController@reportincome');
+    Route::post('/reportincome/filter' ,'UserController@reportincomefilter');
+    Route::get('/reportoutcome' ,'UserController@reportoutcome');
+    Route::post('/reportoutcome/filter' ,'UserController@reportoutcomefilter');
+    Route::get('/tambahitembaru' , 'UserController@tambahitembaru');
+    Route::post('/tambahitembaruprocess' ,'UserController@tambahitembaruprocess');
+
 
 });
 

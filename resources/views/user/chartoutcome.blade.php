@@ -9,7 +9,7 @@
   </div>
  
   <div class="az-content">
-      <form action="{{url('/user/reportprofit/filter')}}" method="post">
+      <form action="{{url('/user/reportoutcome/filter')}}" method="post">
         @csrf
         <div class="row">
           <div class="col-6">

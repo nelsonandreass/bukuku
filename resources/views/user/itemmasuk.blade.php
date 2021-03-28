@@ -9,11 +9,21 @@
     <span>Item masuk</span>
   </div>
 
-  <div>
-    <div class="col-sm-6 col-md-3" style="margin-left:-15px;"><a href="{{url('/user/tambahitem')}}" class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-edit"></i> Tambah Item</a></div>
-  </div>
-
+  
   <div class="az-content pl-3 mt-2">
+    <div>
+      <div class="col-sm-6 col-md-3 mb-3" style="margin-left:-15px;"><a href="{{url('/user/tambahitembaru')}}" class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-edit"></i> Tambah Item Baru</a></div>
+    </div>
+   
+    @if(Session::has('error'))
+      <div class="alert alert-danger" role="alert">
+          {{ Session::get('error') }}
+      </div>
+    @elseif(Session::has('success'))
+      <div class="alert alert-success" role="alert">
+          {{ Session::get('success') }}
+      </div>
+    @endif
     <form action="{{url('/user/itemmasukprocess')}}" method="post">
       @csrf
       <label for="">Nama Item</label>

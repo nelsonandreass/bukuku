@@ -9,7 +9,7 @@
   </div>
  
   <div class="az-content">
-      <form action="{{url('/user/reportprofit/filter')}}" method="post">
+      <form action="{{url('/user/reportincome/filter')}}" method="post">
         @csrf
         <div class="row">
           <div class="col-6">
@@ -26,10 +26,7 @@
       </form>
 
     <div class="row mt-3">
-      <div class="col-md-12">
-        <canvas id="myChart" height="100%"></canvas>
-
-      </div>
+      <canvas id="myChart" height="100"></canvas>
     </div>   
   </div>
     

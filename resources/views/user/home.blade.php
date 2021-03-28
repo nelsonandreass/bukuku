@@ -9,6 +9,15 @@
   </div>
  
   <div class="az-content">
+    @if(Session::has('error'))
+      <div class="alert alert-danger" role="alert">
+          {{ Session::get('error') }}
+      </div>
+    @elseif(Session::has('success'))
+      <div class="alert alert-success" role="alert">
+          {{ Session::get('success') }}
+      </div>
+    @endif
     <div class="row">
       <div class="col-md-3">
         <a href="{{url('user/transaksi')}}" class=""style="text-decoration: none;color: #031b4e;">
@@ -25,24 +34,28 @@
         </a>
       </div>
       <div class="col-md-3">
-        <div class="card mb-3">
-          <div class="card-header text-center">
-            Pengeluaran bulan ini 
-          </div>
-          <div class="card-body text-center">
-              Rp. {{$expense}}
-          </div>
-        </div> 
+        <a href="{{url('user/reportoutcome')}}" style="text-decoration: none;color: #031b4e;">
+          <div class="card mb-3">
+            <div class="card-header text-center">
+              Pengeluaran bulan ini 
+            </div>
+            <div class="card-body text-center">
+                Rp. {{$expense}}
+            </div>
+          </div> 
+        </a>
       </div>
       <div class="col-md-3">
-        <div class="card mb-3">
-          <div class="card-header text-center">
-            Pemasukan bulan ini 
-          </div>
-          <div class="card-body text-center">
-            Rp. {{$income}}
-          </div>
-        </div> 
+        <a href="{{url('user/reportincome')}}" style="text-decoration: none;color: #031b4e;">
+          <div class="card mb-3">
+            <div class="card-header text-center">
+              Pemasukan bulan ini 
+            </div>
+            <div class="card-body text-center">
+              Rp. {{$income}}
+            </div>
+          </div> 
+        </a>
       </div>
       <div class="col-md-3">
         <a href="{{url('user/reportprofit')}}" class=""style="text-decoration: none;color: #031b4e;">

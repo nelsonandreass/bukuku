@@ -6,7 +6,7 @@
   <div class="az-content-breadcrumb">
     <span><a href="{{url('user/home')}}">User</a></span>
     <span><a href="{{url('user/stock')}}" style="text-decoration:none;">Stock</a></span>
-    <span>Tambah item</span>
+    <span>Tambah item Baru</span>
   </div>
   @if(Session::has('error'))
       <div class="alert alert-danger" role="alert">
@@ -17,7 +17,7 @@
           {{ Session::get('success') }}
       </div>
     @endif
-  <form action="{{url('/user/tambahitemprocess')}}" method="post">
+  <form action="{{url('/user/tambahitembaruprocess')}}" method="post">
   @csrf
       <label for="">Nama Item</label>
       <input class="form-control" placeholder="" name="name" type="text">

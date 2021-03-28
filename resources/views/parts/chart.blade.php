@@ -2,28 +2,15 @@
    var ctx = document.getElementById("myChart");
    var month = <?php echo json_encode($tanggal);?>;
    var report = <?php echo json_encode($report);?>;
-   console.log(month);
    var myChart = new Chart(ctx, {
       type: 'bar',
          data: {
             labels: month,
             datasets: [
-               { label: 'Pemasukan',
+               { label: <?php echo json_encode($label);?>,
                data: report,
-               backgroundColor :[
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-                'rgba(255, 129, 102, 1)',
-            ],
+               
+               backgroundColor : <?php echo json_encode($color)?>,
          }
       ]
    },

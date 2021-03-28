@@ -25,7 +25,7 @@
         </div>
       </form>
 
-    <div class="row">
+    <div class="row mt-3">
       <canvas id="myChart" height="100"></canvas>
     </div>   
   </div>
