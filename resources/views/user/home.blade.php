@@ -7,7 +7,9 @@
     <span><a href="{{url('user/home')}}">User</a></span>
     <span>Home</span>
   </div>
- 
+
+  
+
   <div class="az-content">
     @if(Session::has('error'))
       <div class="alert alert-danger" role="alert">
@@ -65,6 +67,18 @@
             </div>
             <div class="card-body text-center">
               Rp. {{$profit}}
+            </div>
+          </div> 
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="{{url('/user/transaksi/tempo')}}" class=""style="text-decoration: none;color: #031b4e;">
+          <div class="card mb-3">
+            <div class="card-header text-center">
+              Tempo
+            </div>
+            <div class="card-body text-center">
+              Rp. {{$tempo}}
             </div>
           </div> 
         </a>

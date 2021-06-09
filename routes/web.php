@@ -30,6 +30,8 @@ Route::group(['prefix' => 'user' , 'middleware' => ['auth']], function(){
     Route::post('/itemkeluarprocess' , 'UserController@itemkeluarProcess');
 
     Route::get('/stock' , 'UserController@stock');
+    Route::get('/get/stock/{id}' , 'UserController@getstock');
+    Route::post('/stock/update' ,'UserController@stockupdate');
     Route::get('/tambahitem' , 'UserController@tambahitem');
     Route::post('/tambahitemprocess' , 'UserController@tambahitemProcess');
     Route::get('/transaksi' , 'UserController@transaksi');
@@ -43,8 +45,15 @@ Route::group(['prefix' => 'user' , 'middleware' => ['auth']], function(){
     Route::post('/reportoutcome/filter' ,'UserController@reportoutcomefilter');
     Route::get('/tambahitembaru' , 'UserController@tambahitembaru');
     Route::post('/tambahitembaruprocess' ,'UserController@tambahitembaruprocess');
-
+    Route::post('/itemkeluartempoprocess' ,'UserController@tempo');
+    Route::get('/transaksi/tempo' , 'UserController@transaksitempo');
+    Route::post('/transaksi/tempo/lunas/{id}' , 'UserController@transaksitempolunas');
 
 });
 
 Route::post('/test' , 'UserController@test');
+Route::get('/migrate', function() {
+    Artisan::call('migrate');
+    return view('page-signin');
+    // Do whatever you want either print a message or exit
+});

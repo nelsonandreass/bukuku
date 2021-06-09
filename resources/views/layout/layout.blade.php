@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!-- Meta -->
     
-
+    <style> @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');</style>
     <title>BukuKu</title>
 
     <!-- vendor css -->

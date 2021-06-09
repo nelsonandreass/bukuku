@@ -34,6 +34,7 @@
           <th>Jumlah</th>
           <th>Harga</th>
           <th>Metode</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -45,6 +46,12 @@
             <td>{{$item->amount}}</td>
             <td>Rp. {{$item->totalprice}}</td>
             <td>{{$item->method}}</td>
+            <td>
+              <form action="{{url('user/transaksi/tempo/lunas' , $item->id)}}" method="post">
+                @csrf
+                <button class="btn btn-success">Lunas</button>              
+              </form>
+            </td>
           </tr>
         @endforeach
        

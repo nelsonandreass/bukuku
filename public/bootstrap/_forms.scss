@@ -2,6 +2,7 @@
 
 .form-control {
   height: $az-height-base;
+  font-family: $font-family-roboto;
   @include border-radius(0);
 
   &:focus {
@@ -26,6 +27,7 @@
 }
 
 .form-label {
+  font-family: $font-family-roboto;
   display: block;
   margin-bottom: 5px;
   color: $gray-700;

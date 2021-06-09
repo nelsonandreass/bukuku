@@ -27,7 +27,7 @@
     <form action="{{url('/user/itemmasukprocess')}}" method="post">
       @csrf
       <label for="">Nama Item</label>
-      <select id="option" name="itemid" class="form-control select2-no-search" onchange="calculate()">
+      <select id="option" name="itemid" class="form-control select2" onchange="calculate()">
         <option label="Choose one"></option>
         @foreach($items as $item)
           <option  value="{{$item->id}},{{$item->item_price_in}}">{{$item->item_name}}</option>
@@ -40,7 +40,7 @@
       <label for="" class="mt-2">Total Harga</label>
       <input class="form-control" readonly id="totalharga" name="totalprice" type="number">
 
-      <div class="col-sm-6 col-md-3"><button class="btn btn-indigo btn-rounded btn-block mt-4">Simpan</button></div>
+      <div class="col-sm-6 col-md-3"><button class="btn btn-indigo  btn-block mt-4">Simpan</button></div>
     </form>
   </div>
   
@@ -56,4 +56,42 @@
   }
  
 </script>
+
+    <script>
+      // Additional code for adding placeholder in search box of select2
+      (function($) {
+        var Defaults = $.fn.select2.amd.require('select2/defaults');
+
+        $.extend(Defaults.defaults, {
+          searchInputPlaceholder: ''
+        });
+
+        var SearchDropdown = $.fn.select2.amd.require('select2/dropdown/search');
+
+        var _renderSearchDropdown = SearchDropdown.prototype.render;
+
+        SearchDropdown.prototype.render = function(decorated) {
+
+          // invoke parent method
+          var $rendered = _renderSearchDropdown.apply(this, Array.prototype.slice.apply(arguments));
+
+          this.$search.attr('placeholder', this.options.get('searchInputPlaceholder'));
+
+          return $rendered;
+        };
+
+      })(window.jQuery);
+    </script>
+
+    <script>
+      $(function(){
+        'use strict'
+        $(document).ready(function(){
+          $('.select2').select2({
+            placeholder: 'Choose one',
+            searchInputPlaceholder: 'Search'
+          });
+        });
+      });
+    </script>
 @endsection

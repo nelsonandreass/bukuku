@@ -7,12 +7,12 @@
          data: {
             labels: month,
             datasets: [
-               { label: <?php echo json_encode($label);?>,
-               data: report,
-               
-               backgroundColor : <?php echo json_encode($color)?>,
-         }
-      ]
+               { 
+                  label: <?php echo json_encode($label);?>,
+                  data: report,
+                  backgroundColor : <?php echo json_encode($color)?>,
+               }
+            ]
    },
    options: {
       scales: {

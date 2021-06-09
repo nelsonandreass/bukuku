@@ -28,9 +28,26 @@
     <div class="row mt-3">
       <div class="col-md-12">
         <canvas id="myChart" height="100%"></canvas>
-
       </div>
-    </div>   
+    </div>  
+
+    <div class="row mt-3">
+      <table class="table table-striped">
+        <thead>
+          <th>Tanggal</th>
+          <th>Pengeluaran</th>
+        </thead>
+        <tbody>
+          @foreach($datas as $data)
+            <tr>
+              <td><?php echo date("F d, Y",strtotime(substr($data->date,0,10)));?></td>
+              <td><b>Rp. <?php echo number_format($data->outcome,0);?></b></td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div> 
+
   </div>
     
 </div>
